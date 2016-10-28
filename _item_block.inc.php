@@ -98,12 +98,15 @@ $params = array_merge( array(
 		?>
 
 		<?php
+			if( ! $Item->is_intro() ) // Do NOT apply tags, comments and feedback on intro posts
+			{ // List all tags attached to this post:
 			// List all tags attached to this post:
 			$Item->tags( array(
 					'before' =>         '<div class="posttags">'.T_('Tags').': ',
 					'after' =>          '</div>',
 					'separator' =>      ', ',
 				) );
+			}
 		?>
 
 
